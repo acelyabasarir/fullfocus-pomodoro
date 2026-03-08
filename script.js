@@ -2,6 +2,8 @@ let timer = null
 
 const alarm = new Audio("alarm.mp3")
 
+alarm.preload = "auto"
+
 let workTime = 25
 let breakTime = 5
 
@@ -114,7 +116,8 @@ updateDisplay()
 
 if(time<=0){
 
-alarm.play()
+alarm.currentTime = 0
+alarm.play().catch(()=>{})
 
 if(isBreak){
 

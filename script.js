@@ -2,8 +2,7 @@ let timer = null
 
 const alarm = new Audio("alarm.mp3")
 alarm.preload = "auto"
-
-alarm.preload = "auto"
+alarm.volume = 1
 
 let workTime = 25
 let breakTime = 5
@@ -194,7 +193,17 @@ renderQuotes()
 
 }
 
-startBtn.onclick=startTimer
+startBtn.onclick = () => {
+
+alarm.currentTime = 0
+alarm.play().then(()=>{
+alarm.pause()
+alarm.currentTime = 0
+}).catch(()=>{})
+
+startTimer()
+
+}
 pauseBtn.onclick=pauseTimer
 resetBtn.onclick=resetTimer
 

@@ -1,0 +1,229 @@
+:root {
+    --accent: #6366f1;
+    --accent-glow: rgba(99, 102, 241, 0.3);
+    --bg: #0b0f1a;
+    --glass: rgba(255, 255, 255, 0.02);
+    --glass-heavy: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text: #f8fafc;
+    --text-dim: #64748b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0b0f1a 100%);
+    color: var(--text);
+    padding: 20px;
+}
+
+.app {
+    width: 100%;
+    max-width: 420px;
+    padding: 48px 32px;
+    border-radius: 32px;
+    background: var(--glass);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    color: var(--text);
+    opacity: 0.9;
+}
+
+.settings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.setting {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.setting input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.setting input:focus {
+    border-color: var(--accent);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+#timer {
+    font-size: 100px;
+    font-weight: 800;
+    margin: 16px 0;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -5px;
+    background: linear-gradient(180deg, #fff 40%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.app > p { 
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.buttons button {
+    flex: 1;
+    border: none;
+    padding: 14px 10px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button#start {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 8px 20px -4px var(--accent-glow);
+}
+
+button#start:hover {
+    transform: translateY(-2px);
+    background: #4f46e5;
+    box-shadow: 0 12px 24px -4px var(--accent-glow);
+}
+
+.buttons button:not(:first-child) {
+    background: var(--glass-heavy);
+    color: var(--text);
+    border: 1px solid var(--glass-border);
+}
+
+.buttons button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.quotes {
+    border-top: 1px solid var(--glass-border);
+    padding-top: 32px;
+}
+
+.quotes h3 {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+ul {
+    list-style: none;
+    max-height: 140px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+li {
+    background: var(--glass);
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    border: 1px solid var(--glass-border);
+    color: #cbd5e1;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+li:hover {
+    background: var(--glass-heavy);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.quotes input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px dashed var(--text-dim);
+    padding: 12px;
+    border-radius: 14px;
+    color: #fff;
+    margin-top: 16px;
+    font-size: 13px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.quotes input:focus {
+    border-style: solid;
+    border-color: var(--accent);
+}
+
+/* HTML ile uyumlu selector */
+.quotes button {
+    width: 100%;
+    margin-top: 12px;
+    background: #fff;
+    color: #0b0f1a;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.quotes button:hover {
+    background: #e2e8f0;
+    transform: scale(0.98);
+}
+
+ul::-webkit-scrollbar { width: 3px; }
+ul::-webkit-scrollbar-thumb { background: var(--text-dim); border-radius: 10px; }
+
+@media (max-width: 480px) {
+    .app { padding: 32px 20px; border-radius: 0; height: 100vh; max-width: 100%; border: none; }
+    #timer { font-size: 80px; }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Pomodoro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<h1>Mood'umuz FullFocus</h1>
+
+<div class="settings">
+
+<div class="setting">
+<label>Çalışma (dk)</label>
+<input id="workInput" type="number" value="25" min="1">
+</div>
+
+<div class="setting">
+<label>Mola (dk)</label>
+<input id="breakInput" type="number" value="5" min="1">
+</div>
+
+<div class="setting">
+<label>Pomodoro</label>
+<input id="sessionInput" type="number" value="4" min="1">
+</div>
+
+</div>
+
+<div id="timer">25:00</div>
+
+<p id="quote">Odaklan, üret, kazan.</p>
+
+<div class="buttons">
+<button id="start">Başlat</button>
+<button id="pause">Duraklat</button>
+<button id="reset">Sıfırla</button>
+</div>
+
+<div class="quotes">
+
+<h3>Bugün seni hangi söz iyi anlatıyor?</h3>
+
+
+<ul id="quoteList"></ul>
+
+<input id="newQuote" placeholder="Yeni söz yaz">
+<button id="addQuote">Söz Ekle</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,6 +1,7 @@
 let timer = null
 
 const alarm = new Audio("alarm.mp3")
+alarm.preload = "auto"
 
 alarm.preload = "auto"
 
@@ -103,6 +104,8 @@ targetSessions = safeNumber(sessionInput.value,4)
 }
 
 function startTimer(){
+
+alarm.play().then(()=>alarm.pause()).catch(()=>{})
 
 readInputs()
 

@@ -1,5 +1,7 @@
 let timer = null
 
+const alarm = new Audio("alarm.mp3")
+
 let workTime = 25
 let breakTime = 5
 
@@ -111,6 +113,8 @@ time--
 updateDisplay()
 
 if(time<=0){
+
+alarm.play()
 
 if(isBreak){
 
